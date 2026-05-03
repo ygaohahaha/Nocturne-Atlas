@@ -1,1 +1,3 @@
 # Nocturne-Atlas
+Nocturne Atlas is an interactive web-based experience designed to generate artistic night sky maps. Users can shape unique visual outputs by entering a “whisper seed,” selecting orbital modes (Orbit, Tide, Signal, Bloom), applying different film styles, and adjusting parameters such as depth, density, and clarity. Additional controls include color palette selection, toggling path lines and coordinate labels, as well as randomization and download options. Blending poetic language with parametric control, the application offers a personalized and immersive way to explore generative celestial visuals.
+👉 Live demo: https://ygaohahaha.github.io/Nocturne-Atlas/
