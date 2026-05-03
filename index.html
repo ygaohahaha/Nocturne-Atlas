@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nocturne Atlas</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="stage" aria-label="星图仪">
+        <img class="ambient-plate" src="./assets/nocturne-field.png" alt="" />
+        <canvas id="atlasCanvas" width="1200" height="900" aria-label="生成的夜间星图"></canvas>
+
+        <div class="brand-lockup">
+          <span class="mark" aria-hidden="true">✦</span>
+          <div>
+            <p>Nocturne Atlas</p>
+            <h1>夜间星图仪</h1>
+          </div>
+        </div>
+
+        <aside class="reading-panel" aria-live="polite">
+          <p class="eyebrow">OBSERVATION</p>
+          <h2 id="readingTitle">银色潮汐正在靠近</h2>
+          <p id="readingBody">把今天的噪声折成一个小小的轨道，留给明天慢慢发亮。</p>
+        </aside>
+      </section>
+
+      <aside class="controls" aria-label="星图控制台">
+        <div class="control-header">
+          <div>
+            <p>CONTROL</p>
+            <h2>调频台</h2>
+          </div>
+          <button id="randomizeBtn" class="icon-button" type="button" aria-label="重新观测" title="重新观测">↻</button>
+        </div>
+
+        <label class="field">
+          <span>私语种子</span>
+          <input id="seedInput" type="text" maxlength="28" value="a small bright maybe" />
+        </label>
+
+        <div class="field">
+          <span>轨道形态</span>
+          <div class="segmented" role="group" aria-label="轨道形态">
+            <button class="active" type="button" data-mode="orbit">Orbit</button>
+            <button type="button" data-mode="tide">Tide</button>
+            <button type="button" data-mode="signal">Signal</button>
+            <button type="button" data-mode="bloom">Bloom</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <span>观测胶片</span>
+          <div class="segmented film-segmented" role="group" aria-label="观测胶片">
+            <button class="active" type="button" data-film="clear">Clear</button>
+            <button type="button" data-film="silver">Silver</button>
+            <button type="button" data-film="thermal">Thermal</button>
+          </div>
+        </div>
+
+        <label class="field range-field">
+          <span>夜深</span>
+          <input id="depthRange" type="range" min="0" max="100" value="62" />
+        </label>
+
+        <label class="field range-field">
+          <span>密度</span>
+          <input id="densityRange" type="range" min="20" max="180" value="112" />
+        </label>
+
+        <label class="field range-field">
+          <span>清晰</span>
+          <input id="clarityRange" type="range" min="8" max="100" value="64" />
+        </label>
+
+        <div class="field">
+          <span>主色</span>
+          <div class="swatches" role="group" aria-label="主色">
+            <button class="swatch active" type="button" data-palette="ember" aria-label="琥珀" style="--swatch: #f5a64a"></button>
+            <button class="swatch" type="button" data-palette="moss" aria-label="苔绿" style="--swatch: #8fd694"></button>
+            <button class="swatch" type="button" data-palette="reef" aria-label="礁蓝" style="--swatch: #55c7d8"></button>
+            <button class="swatch" type="button" data-palette="rose" aria-label="玫瑰" style="--swatch: #ef6f8f"></button>
+          </div>
+        </div>
+
+        <label class="toggle-row">
+          <input id="pathsToggle" type="checkbox" checked />
+          <span>轨迹线</span>
+        </label>
+
+        <label class="toggle-row">
+          <input id="labelsToggle" type="checkbox" />
+          <span>坐标标记</span>
+        </label>
+
+        <div class="stats-grid" aria-label="星图参数">
+          <div>
+            <span id="statA">62</span>
+            <p>LUX</p>
+          </div>
+          <div>
+            <span id="statB">112</span>
+            <p>PTS</p>
+          </div>
+          <div>
+            <span id="statC">64</span>
+            <p>FOC</p>
+          </div>
+        </div>
+
+        <button id="downloadBtn" class="primary-action" type="button">下载星图</button>
+      </aside>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
